@@ -1,0 +1,318 @@
+/**
+ * 通用css样式布局处理
+ *
+ */
+
+/** 基础通用 **/
+.pt5 {
+  padding-top: 5px;
+}
+.pr5 {
+  padding-right: 5px;
+}
+.pb5 {
+  padding-bottom: 5px;
+}
+.mt5 {
+  margin-top: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb8 {
+  margin-bottom: 8px;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.ml0 {
+  margin-left: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.m20 {
+  margin-left: 20px;
+}
+
+/** 表单布局 **/
+.form-header {
+  font-size: 15px;
+  color: #6379bb;
+  border-bottom: 1px solid #ddd;
+  margin: 8px 10px 25px 10px;
+  padding-bottom: 5px;
+}
+
+/* tree border */
+.tree-border {
+  margin-top: 4px;
+  border: 1px solid #e5e6e7;
+  background: #ffffff none;
+  border-radius: 4px;
+}
+
+.list-group-striped > .list-group-item {
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.list-group {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.list-group-item {
+  border-bottom: 1px solid #e7eaec;
+  border-top: 1px solid #e7eaec;
+  margin-bottom: -1px;
+  padding: 11px 0px;
+  font-size: 13px;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.el-card__header {
+  padding: 14px 15px 7px;
+  min-height: 40px;
+}
+
+.el-card__body {
+  padding: 15px 20px 20px 20px;
+}
+
+.card-box {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+/* button color */
+.el-button--cyan.is-active,
+.el-button--cyan:active {
+  background: #20b2aa;
+  border-color: #20b2aa;
+  color: #ffffff;
+}
+
+.el-button--cyan:focus,
+.el-button--cyan:hover {
+  background: #48d1cc;
+  border-color: #48d1cc;
+  color: #ffffff;
+}
+
+.el-button--cyan {
+  background-color: #20b2aa;
+  border-color: #20b2aa;
+  color: #ffffff;
+}
+
+/* text color */
+.text-navy {
+  color: #1ab394;
+}
+
+.text-primary {
+  color: inherit;
+}
+
+.text-success {
+  color: #1c84c6;
+}
+
+.text-info {
+  color: #23c6c8;
+}
+
+.text-warning {
+  color: #f8ac59;
+}
+
+.text-danger {
+  color: #ed5565;
+}
+
+.text-muted {
+  color: #888888;
+}
+
+/* image */
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-lg {
+  width: 120px;
+  height: 120px;
+}
+
+.avatar-upload-preview {
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ccc;
+  overflow: hidden;
+}
+
+/* 拖拽列样式 */
+.sortable-ghost {
+  opacity: 0.8;
+  color: #fff !important;
+  background: #42b983 !important;
+}
+
+// dc自定义全局样式------------------------------------------------------------------------
+
+.app-container.has-fixed-bottom-opt {
+  min-height: calc(
+    100vh - var(--topHeaderHeight) - var(--tagsViewHeight) - 48px
+  );
+}
+
+.app-container.has-fixed-bottom-opt:has(.fixed-bottom-opt) {
+  min-height: calc(
+    100vh - var(--topHeaderHeight) - var(--tagsViewHeight) - 48px - 56px
+  );
+  margin-bottom: 56px;
+}
+
+.app-container.init-container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.fixed-bottom-opt {
+  position: fixed;
+  bottom: 0;
+  left: var(--sideBarWidth);
+  right: 0;
+  height: 56px;
+  background: #ffffff;
+  border-top: 1px solid #dcdcdc;
+  text-align: center;
+  padding-top: 11px;
+  z-index: 11;
+}
+
+.hideSidebar .fixed-bottom-opt {
+  left: var(--sideBarMiniWidth);
+}
+.hideSidebar.mobile .fixed-bottom-opt {
+  left: 0;
+}
+
+.fade-transform-enter-active .fixed-bottom-opt,
+.fade-transform-leave-active .fixed-bottom-opt {
+  display: none;
+}
+
+.top-right-btn {
+  position: relative;
+  float: right;
+}
+
+.dialog-query-form {
+  .el-form-item__label {
+    padding: 0 4px 0 0;
+  }
+}
+.el-form-item.dialog-query-opt {
+  float: right;
+  margin-right: 0;
+}
+.des-dialog {
+  .el-form-item--small .el-form-item__label {
+    padding-right: 12px;
+  }
+}
+
+.card-section {
+  background: #ffffff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  padding: 24px;
+  font-size: 14px;
+  + .card-section {
+    margin-top: 16px;
+  }
+  .card-section-tit {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  .card-section-tit-right{
+    margin-left: auto;
+  }
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card-item {
+    line-height: 22px;
+    display: flex;
+    margin-top: 16px;
+  }
+  .card-item-label {
+    color: #666;
+    min-width: 72px;
+  }
+}
+
+// 按钮操作区
+.dc-opt-row {
+  .el-button {
+    margin-bottom: 16px;
+  }
+}
+
+// 搜索区非自适应样式
+.dc-top-search {
+  .el-form-item__label {
+    padding: 0 4px 0 0;
+  }
+  &.el-form--inline .el-form-item {
+    margin-right: 24px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}

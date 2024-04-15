@@ -1,0 +1,39 @@
+:root {
+  --bg: #f0f2f5;
+  --pageBg: #fff;
+  --textColor: #262626;
+  --themeColor: #2568f1;
+  --sideBarWidth: 220px;
+  --sideBarMiniWidth: 64px;
+  --topHeaderHeight: 56px;
+  --tagsViewHeight: 40px;
+  --logoTitColor: #262626;
+  --menuBg: #fff;
+  --subMenuBg: #fff;
+  --menuHover: #f3f3f3;
+  --menuText: #262626;
+  --menuActiveText: #2568f1;
+  --menuActiveBg: #EEF3FE;
+  --subMenuActiveText: #f4f4f5;
+  --topLogoBorderColor:#E8E9EB;
+  --hoverBg:#f3f3f3;
+  --borderColor:#DCDCDC;
+  --disabledBg:#EEE;
+  --iconColor:#666;
+  --popperShadow:0px 5px 5px -3px rgba(0,0,0,0.1),0px 8px 10px 1px rgba(0,0,0,0.06),0px 3px 14px 2px rgba(0,0,0,0.05);
+  --placeholderColor:#999;
+  --errorColor:#E34D59;
+  --tableBorderColor:#E8E9EB;
+}
+
+// 黑
+:root[theme-dc="theme-dark"] {
+  --logoTitColor: #fff;
+  --menuBg: #000;
+  --subMenuBg: #000;
+  --menuHover: #263445;
+  --menuText: #fff;
+  --menuActiveText: #2568f1;
+  --menuActiveBg: #222;
+  --topLogoBorderColor:#222
+}

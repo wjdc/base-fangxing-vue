@@ -1,0 +1,298 @@
+#app {
+  .main-container {
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: var(--sideBarWidth);
+    position: relative;
+  }
+
+  .sidebar-container {
+    -webkit-transition: width 0.28s;
+    transition: width 0.28s;
+    width: var(--sideBarWidth) !important;
+    background-color: var(--menuBg);
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out,
+        0s padding-right ease-in-out;
+    }
+
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+      padding-top: 12px;
+    }
+
+    .el-scrollbar__bar.is-vertical {
+      right: 0px;
+    }
+
+    .el-scrollbar {
+      height: 100%;
+      box-shadow: 2px 0px 6px 0px rgba(0,21,41,0.05);
+    }
+    &.has-logo {
+
+      .el-scrollbar {
+        height: calc(100% - var(--topHeaderHeight));
+      }
+    }
+
+    .is-horizontal {
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .el-menu .svg-icon {
+      flex-shrink: 0;
+      margin-right: 8px;
+      font-size: 16px;
+    }
+
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: var(--sideBarWidth) !important;
+      background-color: var(--menuBg);
+    }
+
+    .el-menu-item,
+    .el-submenu__title {
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      color: var(--menuText);
+      height: 36px;
+      line-height: 36px;
+      margin-top: 4px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .el-menu-item,.el-submenu__title{padding-left: 24px !important;}
+    .nest-menu .el-menu-item,.nest-menu .el-submenu__title{padding-left: 62px !important;}
+    .nest-menu .nest-menu .el-menu-item,.nest-menu .nest-menu .el-submenu__title{padding-left: 76px !important;}
+
+    .el-submenu__title i {
+      color: var(--menuText);
+    }
+    .el-submenu__title span {
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+      margin-right: 10px;
+    }
+
+    .el-menu-item:hover,
+    .el-menu-item:focus {
+      background-color: var(--menuHover);
+    }
+
+    .el-menu-item.is-active {
+      color: var(--menuActiveText);
+      background-color: var(--menuActiveBg);
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--menuActiveText);
+      }
+    }
+
+    .el-submenu.is-active > .el-submenu__title {
+      color: var(--menuActiveText);
+    }
+    .el-submenu.is-active > .el-submenu__title i {
+      color: var(--menuActiveText);
+    }
+    .el-submenu__title:hover,
+    .el-submenu__title:focus {
+      background-color: var(--menuHover);
+    }
+    .nest-menu .svg-icon {
+      opacity: 0;
+      width: 0;
+      display: none;
+      margin: 0;
+    }
+
+  }
+
+  .hideSidebar {
+    .el-menu {
+      width: var(--sideBarMiniWidth) !important;
+    }
+    .sidebar-container {
+      width: var(--sideBarMiniWidth) !important;
+    }
+
+    .main-container {
+      margin-left: var(--sideBarMiniWidth);
+    }
+
+    .submenu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center;
+        .svg-icon {
+          margin-left: 24px;
+        }
+      }
+    }
+
+    .el-submenu {
+      overflow: hidden;
+
+      & > .el-submenu__title {
+        padding: 0 !important;
+
+        .svg-icon {
+          margin-left: 24px;
+        }
+
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-submenu {
+        & > .el-submenu__title {
+          & > span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: var(--sideBarWidth) !important;
+  }
+
+  // mobile responsive
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+
+    .sidebar-container {
+      transition: transform 0.28s;
+      width: var(--sideBarWidth) !important;
+    }
+
+    &.hideSidebar {
+      .sidebar-container {
+        pointer-events: none;
+        transition-duration: 0.3s;
+        transform: translate3d(calc(0px - var(--sideBarWidth)), 0, 0);
+      }
+    }
+  }
+
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+  & > .el-menu {
+    background-color: var(--menuBg);
+    .svg-icon {
+      margin-right: 16px;
+    }
+  }
+  .el-menu-item,
+  .el-submenu__title {
+    color: var(--menuText);
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+  }
+  .nest-menu+.nest-menu{margin-top: 2px;}
+  .nest-menu .el-menu-item,.nest-menu .el-submenu__title{padding-left: 8px !important;}
+  .el-submenu__icon-arrow{right: 8px;}
+  .el-menu-item.is-active {
+    color: var(--menuActiveText);
+    background-color: var(--menuActiveBg);
+    position: relative;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   width: 3px;
+    //   background: var(--menuActiveText);
+    // }
+  }
+
+  .el-menu-item:hover,
+  .el-menu-item:focus {
+    background-color: var(--menuHover);
+  }
+
+  .el-submenu__title:hover,
+  .el-submenu__title:focus {
+    background-color: var(--menuHover);
+  }
+
+  // the scroll bar appears when the subMenu is too long
+  > .el-menu--popup {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track-piece {
+      background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #99a9bf;
+      border-radius: 20px;
+    }
+  }
+  .nest-menu .svg-icon {
+    opacity: 0;
+    width: 0;
+    display: none;
+    margin: 0;
+  }
+  .el-submenu.is-active .el-submenu__title{
+    color: var(--themeColor);
+  }
+  .el-submenu.is-active .el-submenu__title i{
+    color: var(--themeColor);
+  }
+}

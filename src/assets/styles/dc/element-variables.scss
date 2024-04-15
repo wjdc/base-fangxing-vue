@@ -1,0 +1,104 @@
+/**
+* I think element-ui's default theme color is too light for long-term use.
+* So I modified the default color and you can modify it to your liking.
+**/
+
+/* theme color */
+$--color-primary: #2568F1;
+$--color-success:  #00A870;
+$--color-warning: #ED7B2F;
+$--color-danger: #E34D59;
+// $--color-info: #1E1E1E;
+
+$--button-font-weight: 400;
+$--button-small-padding-vertical:8px;
+$--button-small-padding-horizontal:15px;
+$--button-small-font-size:14px;
+$--button-default-background-color:#FFFFFF;
+
+
+$--color-text-regular: var(--textColor);
+$--color-text-primary: var(--textColor);
+
+
+$--border-color-base: #DCDCDC;
+$--border-color-light: #dfe4ed;
+$--border-color-lighter: #DCDCDC;
+$--border-radius-base: 3px;
+$--border-radius-small:3px;
+
+$--box-shadow-light:var(--popperShadow);
+
+$--button-small-border-radius:3px;
+
+$--table-border:1px solid#E8E9EB;
+$--table-font-color:var(--textColor);
+$--table-header-font-color:#666666;
+
+$--input-border-radius:3px;
+$--input-icon-color: var(--iconColor);
+$--input-hover-border:$--color-primary;
+$--input-clear-hover-color:var(--iconColor);
+$--input-disabled-fill:var(--disabledBg);
+$--input-disabled-color:#B0B0B0;
+$--input-disabled-border:var(--borderColor);
+
+$--select-option-hover-background:var(--hoverBg);
+$--select-dropdown-shadow: var(--popperShadow);
+$--select-dropdown-border:0.5px solid var(--borderColor);
+$--select-border-color-hover:$--color-primary;
+
+// select图标颜色
+$--select-input-color:var(--iconColor);
+$--select-dropdown-padding:6px;
+$--select-option-height:28px;
+$--popover-arrow-size:0px;
+
+$--tag-info-color:#666;
+
+// placeholder文字颜色
+$--color-text-placeholder:var(--placeholderColor);
+
+$--dropdown-menu-box-shadow:var(--popperShadow);
+$--dropdown-menuItem-hover-fill: var(--hoverBg);
+$--dropdown-menuItem-hover-color: var(--textColor);
+
+$--tooltip-fill:rgba(0,0,0,0.90);
+$--tooltip-font-size:14px;
+$--tooltip-padding:5px 8px;
+
+
+$--switch-off-color:#C5C5C5;
+
+$--checkbox-input-width:16px;
+$--checkbox-input-height:16px;
+$--checkbox-disabled-input-fill:var(--disabledBg);
+$--checkbox-disabled-checked-input-fill:var(--disabledBg);
+$--checkbox-disabled-checked-icon-color:rgba(0,0,0,0.26);
+
+$--radio-input-width:16px;
+$--radio-input-height:16px;
+$--radio-checked-icon-color:#fff;
+$--radio-disabled-input-border-color:var(--borderColor);
+$--radio-disabled-input-fill:var(--disabledBg);
+$--radio-disabled-checked-input-fill:var(--disabledBg);
+$--radio-disabled-checked-input-border-color:var(--borderColor);
+$--radio-disabled-checked-icon-color:rgba(0,0,0,0.26);
+
+$--switch-width:36px;
+$--switch-off-color:#C5C5C5;
+
+$--tree-node-hover-background-color:var(--hoverBg);
+
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  theme: $--color-primary;
+}
